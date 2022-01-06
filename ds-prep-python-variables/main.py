@@ -18,20 +18,9 @@ print(height_in_meters)
 eats_plants = True
 eats_animals = False
 
-if(eats_plants == True or eats_animals == True):
-  is_animal = True
-else:
-  is_animal = False
-
-if(eats_plants == True and eats_animals == True):
-  is_omnivore = True
-else:
-  is_omnivore = False
-
-if(is_animal != True):
-  is_plant = True
-else:
-  is_plant = False
+is_animal = eats_animals == True or eats_plants == True
+is_omnivore = eats_plants == True and eats_animals == True
+is_plant = is_animal != True
 
 print(is_animal, is_omnivore, is_plant)
 
