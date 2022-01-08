@@ -11,6 +11,7 @@ first_name = person["first_name"]
 last_name = person.get("last_name")
 middle_name = person.get("middle_name")
 #print(first_name + " " + middle_name + " " + last_name)
+print(first_name + " " + last_name)
 
 
 person["job"] = "ninja"
