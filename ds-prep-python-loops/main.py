@@ -4,7 +4,7 @@ record = (1, "Grimdiana", "Bones", "boulders")
 row = ""
 
 for x in record:
-  row = row + str(x) + ","
+   row = row + str(x) + ","
 print(row)
 
 values_list = [1, 1, 2, 3, 5, 8, 13, 21, 34]
@@ -12,7 +12,7 @@ values_list = [1, 1, 2, 3, 5, 8, 13, 21, 34]
 for x in values_list:
   print(x)
 
-index_list = []
+index_list = list()
 
 for i in range(len(values_list)):
   index_list.insert(0, i)
@@ -44,14 +44,14 @@ player_positions = {
   "I Don't Care": "SS"
 }
 
-players = []
+players = list()
 for x in player_positions.keys():
   players.append(x)
 print(players)
 
-positions = []
+positions = set()
 for x in player_positions.values():
-  positions.append(x)
+  positions.add(x)
 print(positions)
 
 for x in player_positions.items():
