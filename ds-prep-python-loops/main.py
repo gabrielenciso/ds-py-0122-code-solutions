@@ -17,12 +17,10 @@ index_list = list()
 for i in range(len(values_list)):
   index_list.insert(0, i)
 print(index_list)
-print(len(index_list) == len(values_list))
 
 for val in index_list:
   if val % 2 != 0:
-    index_list.remove(val)
-print(index_list)
+    values_list.pop(val)
 print(values_list)
 
 vowels = {"A", "E", "I", "O", "U"}
