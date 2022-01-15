@@ -49,21 +49,16 @@ print(first_five_series_points(unemployment_rates))
 #iii
 def check_year(series_points, *input_year):
   check_year = []
-
   for x in input_year:
-    if x in series_points["year"]:
-      check_year.append(str(x) + " " + "included")
-    else:
-      check_year.append(str(x) + " " + "not included")
+    check_year.append(x in series_points["year"])
   return check_year
 print(check_year(unemployment_rates, 2000, 2010))
 
 #iv
 def get_recent_unemp_rate(series_points):
-  years = series_points["year"]
-  max_year = max(years)
-  max_index = years.index(max_year)
-  return (max_year, series_points["unemployment_rate"][max_index])
+  max_year = max(series_points["year"])
+  max_index = series_points["year"].index(max_year)
+  return series_points["unemployment_rate"][series_points["year"].index(max_year)]
 print(get_recent_unemp_rate(unemployment_rates))
 
 #v

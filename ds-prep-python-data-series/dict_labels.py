@@ -45,13 +45,9 @@ print(first_five_series_points(unemployment_rates))
 
 #iii
 def check_year(series_points, *input_year):
-  check_year = []
-
+  check_year=[]
   for x in input_year:
-    if x in series_points.keys():
-      check_year.append(str(x) + " " + "included")
-    else:
-      check_year.append(str(x) + " " + "not included")
+    check_year.append(x in series_points.keys())
   return check_year
 print(check_year(unemployment_rates, 2000, 2010))
 
