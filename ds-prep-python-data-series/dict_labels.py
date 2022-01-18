@@ -35,7 +35,7 @@ unemployment_rates = {
 
 #i
 def last_appearing_series_point(series_points, keys):
-  return {keys[0]: list(series_points)[-1], keys[1]: list(series_points.values())[-1]}
+   return {keys[0]: list(series_points)[-1], keys[1]: list(series_points.values())[-1]}
 print(last_appearing_series_point(unemployment_rates, columns))
 
 #ii
@@ -45,7 +45,8 @@ print(first_five_series_points(unemployment_rates))
 
 #iii
 def check_year(series_points, *input_year):
-  check_year=[]
+  check_year = []
+
   for x in input_year:
     check_year.append(x in series_points.keys())
   return check_year
@@ -63,7 +64,7 @@ print(unique_years(unemployment_rates))
 
 #vi
 def ordered_rates_by_year(series_points):
-  return [rate[1] for rate in sorted(series_points.items())]  ##
+  return [rate[1] for rate in sorted(series_points.items())]
 print(ordered_rates_by_year(unemployment_rates))
 
 #vii

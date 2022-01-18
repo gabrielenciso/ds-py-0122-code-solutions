@@ -50,11 +50,12 @@ print(first_five_series_points(unemployment_rates))
 #iii
 def check_year(series_points, *input_year):
   year = []
+  check_year = []
   for idx, items in enumerate(series_points):
     year.append(series_points[idx]["year"])
   for x in input_year:
-    print(x in year)
-  return
+    check_year.append(x in year)
+  return check_year
 print(check_year(unemployment_rates, 2000, 2010))
 
 #iv
@@ -76,7 +77,7 @@ print(unique_years(unemployment_rates))
 #vi
 def ordered_rates_by_year(series_points):
   ordered_rate = []
-  for x in sorted(series_points, key=lambda i: i["year"]):   ##
+  for x in sorted(series_points, key=lambda i: i["year"]):
     ordered_rate.append(x["unemployment_rate"])
   return ordered_rate
 print(ordered_rates_by_year(unemployment_rates))
@@ -93,7 +94,8 @@ print(largest_rate(unemployment_rates))
 def employment_rate(series_points):
   new_series = []
   for x in series_points:
-    new_series.append({"employment rate": 100 - x["unemployment_rate"], "year": x["year"]})
+    new_series.append(
+        {"employment rate": 100 - x["unemployment_rate"], "year": x["year"]})
   return new_series
 print(employment_rate(unemployment_rates))
 

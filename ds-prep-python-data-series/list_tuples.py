@@ -1,7 +1,4 @@
 # Data Set: Do Not Modify
-from tabnanny import check
-
-
 columns = ("year", "unemployment_rate")
 label_order = [
     2001, 2002, 2003, 2004, 2005,
@@ -38,7 +35,7 @@ unemployment_rates = [
 
 #i
 def last_appearing_series_point(series_points):
-  return series_points[-1]
+  return {series_points[-1][0]: series_points[-1][1]}
 print(last_appearing_series_point(unemployment_rates))
 
 #ii

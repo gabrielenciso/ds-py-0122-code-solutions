@@ -1,7 +1,4 @@
 # Data Set: Do Not Modify
-import enum
-
-
 columns = ("year", "unemployment_rate")
 label_order = [
     2001, 2002, 2003, 2004, 2005,
@@ -49,6 +46,7 @@ print(first_five_series_points(unemployment_rates))
 #iii
 def check_year(series_points, *input_year):
   check_year = []
+
   for x in input_year:
     check_year.append(x in series_points["year"])
   return check_year
@@ -56,9 +54,10 @@ print(check_year(unemployment_rates, 2000, 2010))
 
 #iv
 def get_recent_unemp_rate(series_points):
-  max_year = max(series_points["year"])
-  max_index = series_points["year"].index(max_year)
-  return series_points["unemployment_rate"][series_points["year"].index(max_year)]
+  years = series_points["year"]
+  max_year = max(years)
+  max_index = years.index(max_year)
+  return (max_year, series_points["unemployment_rate"][max_index])
 print(get_recent_unemp_rate(unemployment_rates))
 
 #v
@@ -90,7 +89,7 @@ def employment_rate(series_points):
   new_series = {
     'year': series_points["year"],
     'unemployment_rate': series_points["unemployment_rate"]   ##why does it change og dictionary if I do new_series = series_points
-  }
+    }
   unemployment_rate = new_series["unemployment_rate"]
 
   for x in unemployment_rate:
